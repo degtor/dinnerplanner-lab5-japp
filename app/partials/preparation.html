@@ -1,0 +1,21 @@
+<div id="subnav" class="col-md-12" style="background-color:#f5e79e">
+    <h3 style="float:left;">My dinner: {{numberOfGuests}} people</h3>
+    <a href="#/search" class="btn btn-primary pull-right" style="margin-top:10px;">Back to select dish</a>
+</div>
+    <div class="col-md-12" style="background:#fff">
+        <div ng-repeat="dish in getFullMenu() track by $index">
+            <div class="row">
+                <div class='col-md-3'>
+                    <img ng-src="{{dish.ImageURL}}"/>
+                </div>
+                <div class="col-md-4">
+                    <h4>{{dish.Title}}</h4>
+                    <p style="font-weight:bold;">LOREM IPSUM OSV</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>PREPARATION</h3>
+                    <p style="font-weight:bold;">{{dish.Description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>

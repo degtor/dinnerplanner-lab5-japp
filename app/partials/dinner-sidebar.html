@@ -1,0 +1,18 @@
+<div class="col-md-3 sidebar" id="sidebar">
+    <h2>My dinner</h2>
+    <div class="form-group">
+        <label class="control-label">Number of guests:</label>
+        <div>
+            <input type="number" ng-model="numberOfGuests" ng-change="setNumberOfGuest(numberOfGuests)"/>
+        </div>
+    </div>
+    <table id="selectedDishes">
+        <tr ng-repeat="desh in getFullMenu() track by $index">
+            <td>{{desh.Title}}</td>
+            <td>{{getDishPrice(desh)}}</td>
+            <td ng-click="removeDishFromMenu(desh)">X</td>
+        </tr>
+    </table>
+    <h3>Total ${{getTotalMenuPrice()}}</h3>
+    <a href="#/dinneroverview" class="btn btn-primary">Confirm Dinner</a>
+</div>

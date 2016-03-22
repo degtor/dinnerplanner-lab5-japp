@@ -1,0 +1,40 @@
+<!-- TODO in Lab 5: Display the dish information including image, Description,
+Instructions, Ingredients and total cost. -->
+<div class="row">
+    <ng-include src="'partials/dinner-sidebar.html'" ng-controller="DinnerCtrl"></ng-include>
+
+    <div class="col-md-9" id="selectedDishes">
+        <div class="col-md-5 dish">
+            <h3>{{dish.Title}}</h3>
+            <img style="width:300px; height:200px;" ng-src="{{dish.ImageURL}}"/>
+            <p>{{dish.Description}}</p>
+            <a href="#/search" class="btn btn-primary">Back to select dish</a>
+        </div>
+        <div class="col-md-4">
+            <h4>Ingredients</h4>
+            <table>
+                <tr ng-repeat="ingredient in dish.Ingredients">
+                    <td>
+                        {{ingredient.RecipeID}}
+                    </td>
+                    <td>
+                        {{ingredient.DisplayQuantity}}
+                    </td>
+                    <td>
+                        {{ingredient.MetricUnit}}
+                    </td>
+                    <td>
+                        {{ingredient.Name}}
+                    </td>
+                    <td>
+                        SEK
+                    </td>
+                    <td>
+                        1
+                    </td>
+                </tr>
+            </table>
+            <button ng-click="addDish(dish)" type="button" class="btn btn-warning">Confirm dish</button>
+        </div>
+    </div>
+</div>

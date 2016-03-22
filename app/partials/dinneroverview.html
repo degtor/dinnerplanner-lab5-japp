@@ -1,0 +1,25 @@
+<div id="subnav" class="col-md-12" style="background-color:#f5e79e">
+    <h3 style="float:left;">My dinner: {{numberOfGuests}} people</h3>
+    <a href="#/search" class="btn btn-primary pull-right" style="margin-top:10px;">Back to select dish</a>
+</div>
+<div id="overview" class="col-md-12">
+    <div ng-repeat="dish in getFullMenu() track by $index">
+        <div class='col-md-3' style='border: solid #000000; padding:10px; margin-left:20px;'>
+            <img ng-src="{{dish.ImageURL}}"/>
+            <p style="font-weight:bold;">{{dish.Title}}</p>
+            <p>{{getDishPrice(dish)}} SEK</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class='col-md-1' style='margin-left: 40px; border-left:solid #000; padding: 130px 10px 10px 30px;'>
+            <p>Total price: {{getTotalMenuPrice()}} SEK</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 text-center">
+            <a href="#/preparation" class="btn btn-primary" style="margin-top:10px;">Print recipe</a>
+        </div>
+    </div>
+</div>
